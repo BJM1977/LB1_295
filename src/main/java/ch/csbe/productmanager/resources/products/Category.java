@@ -10,44 +10,44 @@ public class Category {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
 
-    @Column(columnDefinition = "varchar(255)")
-    private String categoryName;
+    @Column(columnDefinition = "TinyInt")
+    private String active;
 
     @Column(columnDefinition = "varchar(255)")
-    private String categoryDescription;
+    private String name;
 
-    @OneToMany()
-    private List<Product>product;
+    @OneToMany(mappedBy = "category")
+    private List<Product>products;
 
     public Long getId() {
         return id;
     }
 
-    public String getCategoryName() {
-        return categoryName;
+    public String getActive() {
+        return active;
     }
 
-    public String getCategoryDescription() {
-        return categoryDescription;
+    public String getName() {
+        return name;
     }
 
-    public List<Product> getProduct() {
-        return product;
+    public List<Product> getProducts() {
+        return products;
     }
 
     public void setId(Long id) {
         this.id = id;
     }
 
-    public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName;
+    public void setActive(String active) {
+        this.active = active;
     }
 
-    public void setCategoryDescription(String categoryDescription) {
-        this.categoryDescription = categoryDescription;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setProduct(List<Product> product) {
-        this.product = product;
+    public void setProducts(List<Product> products) {
+        this.products = products;
     }
 }
