@@ -1,11 +1,11 @@
 package ch.csbe.productmanager.resources.products;
 
+import ch.csbe.productmanager.resources.products.dto.ProductCreateDto;
+import ch.csbe.productmanager.resources.products.dto.ProductDetailDto;
 import ch.csbe.productmanager.resources.products.dto.ProductShowDto;
 import jakarta.persistence.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -15,9 +15,15 @@ import java.util.List;
 public class ProductController {
     @Autowired
     private ProductService productService;
+
     @GetMapping
     public List<ProductShowDto> getProducts() {
         return productService.findAll();
 
+    }
+
+    @PostMapping
+    public ProductDetailDto createProduct(@RequestBody ProductCreateDto productCreateDto) {
+        return productService.create(productCreateDto);
     }
 }

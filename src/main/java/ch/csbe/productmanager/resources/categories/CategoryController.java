@@ -1,4 +1,5 @@
 package ch.csbe.productmanager.resources.categories;
+import ch.csbe.productmanager.resources.categories.dto.CategoryShowDto;
 import jakarta.persistence.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,8 +14,8 @@ public class CategoryController {
     @Autowired
     private CategoryService categoryService;
     @GetMapping
-    public List<Category> getAllCategories() {
-        return categoryService.getAllCategories();
+    public List<CategoryShowDto> getAllCategories() {
+        return categoryService.findAll();
     }
 
 }
