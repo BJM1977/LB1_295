@@ -1,23 +1,20 @@
-package ch.csbe.productmanager.resources.products;
-
-import ch.csbe.productmanager.resources.products.dto.ProductShowDto;
+package ch.csbe.productmanager.resources.categories;
 import jakarta.persistence.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import java.util.List;
 
 @RestController
-@RequestMapping("products")
-//http://localhost:8080/products
-public class ProductController {
+@RequestMapping("categories")
+//http://localhost:8080/categories
+public class CategoryController {
     @Autowired
-    private ProductService productService;
+    private CategoryService categoryService;
     @GetMapping
-    public List<ProductShowDto> getProducts() {
-        return productService.findAll();
-
+    public List<Category> getAllCategories() {
+        return categoryService.getAllCategories();
     }
+
 }

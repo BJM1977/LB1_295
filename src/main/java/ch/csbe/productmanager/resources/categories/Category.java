@@ -1,5 +1,6 @@
-package ch.csbe.productmanager.resources.products;
+package ch.csbe.productmanager.resources.categories;
 
+import ch.csbe.productmanager.resources.products.Product;
 import jakarta.persistence.*;
 
 import java.util.List;

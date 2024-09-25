@@ -1,7 +1,7 @@
 package ch.csbe.productmanager.resources.products;
 
+import ch.csbe.productmanager.resources.categories.Category;
 import jakarta.persistence.*;
-import java.util.List;
 
 @Entity
 public class Product {
