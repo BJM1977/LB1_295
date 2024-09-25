@@ -1,29 +1,17 @@
-package ch.csbe.productmanager.resources.users;
+package ch.csbe.productmanager.resources.users.dto;
 
-import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-@Entity
+@Data
 @Getter
 @Setter
-@Data
-public class User {
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+public class UserShowDto {
     private Long id;
-
-    @Column(columnDefinition = "varchar(255)")
     private String userName;
-
-    @Column(columnDefinition = "varchar(255)")
     private String userPassword;
-
-    @Column(columnDefinition = "varchar(255)")
     private String userEmailAdress;
-
-    @Column(columnDefinition = "boolean")
     private Boolean isAdmin=false;
 
     public void setId(Long id) {
@@ -42,7 +30,7 @@ public class User {
         this.userEmailAdress = userEmailAdress;
     }
 
-    public void setIsAdmin(Boolean admin) {
+    public void setAdmin(Boolean admin) {
         isAdmin = admin;
     }
 
@@ -62,7 +50,7 @@ public class User {
         return userEmailAdress;
     }
 
-    public Boolean getIsAdmin() {
+    public Boolean getAdmin() {
         return isAdmin;
     }
 }

@@ -1,11 +1,14 @@
 package ch.csbe.productmanager.resources.users;
 
+import ch.csbe.productmanager.resources.products.dto.ProductCreateDto;
+import ch.csbe.productmanager.resources.products.dto.ProductDetailDto;
+import ch.csbe.productmanager.resources.products.dto.ProductShowDto;
+import ch.csbe.productmanager.resources.users.dto.UserCreateDto;
+import ch.csbe.productmanager.resources.users.dto.UserDetailDto;
+import ch.csbe.productmanager.resources.users.dto.UserShowDto;
 import jakarta.persistence.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -17,11 +20,13 @@ public class UserController {
     private UserService userService;
 
     @GetMapping
-    public List<User> getUsers() {
-        return userService.getAllUsers();
+    public List<UserShowDto> getUsers() {
+        return userService.findAll();
+
     }
-    /*@PostMapping("/add")
-    public User addUser(@RequestBody User user) {
-        return userService.addUser(user);
-    }*/
+
+    @PostMapping
+    public UserDetailDto createProduct(@RequestBody UserCreateDto userCreateDto) {
+        return userService.create(userCreateDto);
+    }
 }
