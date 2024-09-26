@@ -25,4 +25,5 @@ public abstract class UserMapper {
     public abstract User toEntity(UserCreateDto userCreateDto);
     public abstract UserDetailDto toDetailDto(User user);
     public abstract void update (UserUpdateDto userUpdateDto, @MappingTarget User user);
+
 }

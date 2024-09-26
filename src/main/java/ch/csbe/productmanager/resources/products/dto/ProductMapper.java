@@ -22,4 +22,5 @@ public abstract class ProductMapper {
     public abstract Product toEntity(ProductCreateDto productCreateDto);
     public abstract ProductDetailDto toDetailDto(Product product);
     public abstract void update ( ProductUpdateDto productUpdateDto,@MappingTarget Product product);
+
 }

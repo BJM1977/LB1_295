@@ -21,4 +21,5 @@ public abstract class CategoryMapper {
     public abstract Category toEntity(CategoryCreateDto categoryCreateDto);
     public abstract CategoryDetailDto toDetailDto(Category category);
     public abstract void update (CategoryUpdateDto categoryUpdateDto, @MappingTarget Category category);
+
 }

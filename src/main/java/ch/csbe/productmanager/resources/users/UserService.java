@@ -50,4 +50,20 @@ public class UserService {
     public void delete(Long id) {
         userRepository.deleteById(id);
     }
+
+    public UserRepository getUserRepository() {
+        return userRepository;
+    }
+
+    public UserMapper getUserMapper() {
+        return userMapper;
+    }
+
+    public void setUserRepository(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
+    public void setUserMapper(UserMapper userMapper) {
+        this.userMapper = userMapper;
+    }
 }

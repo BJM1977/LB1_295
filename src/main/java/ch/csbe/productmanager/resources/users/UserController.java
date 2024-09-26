@@ -29,4 +29,12 @@ public class UserController {
     public UserDetailDto createProduct(@RequestBody UserCreateDto userCreateDto) {
         return userService.create(userCreateDto);
     }
+
+    public UserService getUserService() {
+        return userService;
+    }
+
+    public void setUserService(UserService userService) {
+        this.userService = userService;
+    }
 }

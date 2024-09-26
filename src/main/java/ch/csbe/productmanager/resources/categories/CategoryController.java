@@ -18,4 +18,11 @@ public class CategoryController {
         return categoryService.findAll();
     }
 
+    public CategoryService getCategoryService() {
+        return categoryService;
+    }
+
+    public void setCategoryService(CategoryService categoryService) {
+        this.categoryService = categoryService;
+    }
 }

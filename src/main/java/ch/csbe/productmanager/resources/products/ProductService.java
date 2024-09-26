@@ -47,4 +47,20 @@ public class ProductService {
     public void delete(Long id) {
         productRepository.deleteById(id);
     }
+
+    public ProductRepository getProductRepository() {
+        return productRepository;
+    }
+
+    public ProductMapper getProductMapper() {
+        return productMapper;
+    }
+
+    public void setProductRepository(ProductRepository productRepository) {
+        this.productRepository = productRepository;
+    }
+
+    public void setProductMapper(ProductMapper productMapper) {
+        this.productMapper = productMapper;
+    }
 }

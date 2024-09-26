@@ -45,4 +45,20 @@ public class CategoryService {
         public void delete(Long id) {
             categoryRepository.deleteById(id);
         }
+
+    public CategoryRepository getCategoryRepository() {
+        return categoryRepository;
     }
+
+    public CategoryMapper getCategoryMapper() {
+        return categoryMapper;
+    }
+
+    public void setCategoryRepository(CategoryRepository categoryRepository) {
+        this.categoryRepository = categoryRepository;
+    }
+
+    public void setCategoryMapper(CategoryMapper categoryMapper) {
+        this.categoryMapper = categoryMapper;
+    }
+}

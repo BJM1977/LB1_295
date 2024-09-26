@@ -26,4 +26,12 @@ public class ProductController {
     public ProductDetailDto createProduct(@RequestBody ProductCreateDto productCreateDto) {
         return productService.create(productCreateDto);
     }
+
+    public ProductService getProductService() {
+        return productService;
+    }
+
+    public void setProductService(ProductService productService) {
+        this.productService = productService;
+    }
 }
