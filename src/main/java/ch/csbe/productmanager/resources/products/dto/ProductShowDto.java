@@ -1,9 +1,11 @@
 package ch.csbe.productmanager.resources.products.dto;
 
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
 @Data
+@Schema(description = "DTO für die Listenansicht aller Produkte (ProduktsübersichtWebseite)")
 public class ProductShowDto {
     public Long id;
     public String sku;
