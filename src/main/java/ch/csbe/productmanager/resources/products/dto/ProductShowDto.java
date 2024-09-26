@@ -2,18 +2,28 @@ package ch.csbe.productmanager.resources.products.dto;
 
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 @Data
 @Schema(description = "DTO für die Listenansicht aller Produkte (ProduktShowWebseite)")
 public class ProductShowDto {
+    @NotNull
+    @Schema(description = "Einzigartige Identifikationsnummer des Produkts")
     public Long id;
+    @Schema(description = "Artikelnummer des Produkts")
     public String sku;
+    @Schema(description = "Ist das Produkt im Verkauf?")
     public String active;
+    @Schema(description = "Name des Produkts")
     public String name;
+    @Schema(description = "Bild des Produkts")
     public String image;
+    @Schema(description = "Beschreibung des Produkts")
     public String description;
+    @Schema(description = "Preis des Produkts")
     public Float price;
+    @Schema(description = "Lagerbestand des Produkts")
     public String stock;
 
     public Long getId() {

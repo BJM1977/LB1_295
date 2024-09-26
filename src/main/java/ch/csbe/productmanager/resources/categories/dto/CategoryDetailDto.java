@@ -1,11 +1,16 @@
 package ch.csbe.productmanager.resources.categories.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.NotNull;
 
 @Schema(description = "DTO für die detailierte Listenansicht von Kategorien (CategoryDetailWebseiteDetailiert)")
 public class CategoryDetailDto {
+    @NotNull
+    @Schema(description = "Einzigartige Identifikationsnummer der Kategorie")
     public String id;
+    @Schema(description = "Ist die Kategorie aktiv?")
     public String active;
+    @Schema(description = "Name der Kategorie")
     public String name;
 
     public String getId() {

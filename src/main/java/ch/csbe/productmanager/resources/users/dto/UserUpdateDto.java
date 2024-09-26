@@ -4,10 +4,14 @@ import io.swagger.v3.oas.annotations.media.Schema;
 
 @Schema(description = "DTO für das Bearbeiten von Usern (UserUpdateWebseite)")
 public class UserUpdateDto {
+    @Schema(description = "Name des Users")
     private String userName;
+    @Schema(description = "Passwort des Users")
     private String userPassword;
+    @Schema(description = "E-MailAdresse des Users")
     private String userEmailAdress;
-    private boolean isAdmin=false;
+    @Schema(description = "Ist der User ein Admin?")
+    private Boolean isAdmin=false;
 
     public String getUserName() {
         return userName;
@@ -21,9 +25,6 @@ public class UserUpdateDto {
         return userEmailAdress;
     }
 
-    public boolean isAdmin() {
-        return isAdmin;
-    }
 
     public void setUserName(String userName) {
         this.userName = userName;
@@ -37,7 +38,11 @@ public class UserUpdateDto {
         this.userEmailAdress = userEmailAdress;
     }
 
-    public void setAdmin(boolean admin) {
-        isAdmin = admin;
+    public void setIsAdmin(Boolean isAdmin) {
+        this.isAdmin = isAdmin;
+    }
+
+    public Boolean getIsAdmin() {
+        return isAdmin;
     }
 }

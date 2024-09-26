@@ -4,12 +4,19 @@ import io.swagger.v3.oas.annotations.media.Schema;
 
 @Schema(description = "DTO für das Bearbeiten von Produkten (ProduktsUpdateWebseite)")
 public class ProductUpdateDto {
+    @Schema(description = "Artikelnummer des Produkts")
     public String sku;
+    @Schema(description = "Ist das Produkt im Verkauf?")
     public String active;
+    @Schema(description = "Name des Produkts")
     public String name;
+    @Schema(description = "Bild des Produkts")
     public String image;
+    @Schema(description = "Beschreibung des Produkts")
     public String description;
+    @Schema(description = "Preis des Produkts")
     public Float price;
+    @Schema(description = "Lagerbestand des Produkts")
     public String stock;
 
     public String getSku() {

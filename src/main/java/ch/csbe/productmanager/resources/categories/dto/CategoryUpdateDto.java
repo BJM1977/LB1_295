@@ -4,7 +4,9 @@ import io.swagger.v3.oas.annotations.media.Schema;
 
 @Schema(description = "DTO für das Update von Kategorien (CategoryUpdateWebseite)")
 public class CategoryUpdateDto {
+    @Schema(description = "Ist die Kategorie aktiv?")
     public String active;
+    @Schema(description = "Name der Kategorie")
     public String name;
 
     public String getActive() {

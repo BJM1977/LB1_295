@@ -1,6 +1,7 @@
 package ch.csbe.productmanager.resources.users.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -10,13 +11,19 @@ import lombok.Setter;
 @Getter
 @Setter
 public class UserShowDto {
+    @NotNull
+    @Schema(description = "Einzigartige Identifikationsnummer des Users")
     private Long id;
+    @Schema(description = "Name des Users")
     private String userName;
+    @Schema(description = "Passwort des Users")
     private String userPassword;
+    @Schema(description = "E-MailAdresse des Users")
     private String userEmailAdress;
+    @Schema(description = "Ist der User ein Admin?")
     private Boolean isAdmin=false;
 
-    public void setId(Long id) {
+    public void setId(@NotNull Long id) {
         this.id = id;
     }
 
@@ -32,11 +39,15 @@ public class UserShowDto {
         this.userEmailAdress = userEmailAdress;
     }
 
-    public void setAdmin(Boolean admin) {
-        isAdmin = admin;
+    public void setIsAdmin(Boolean isAdmin) {
+        this.isAdmin = isAdmin;
     }
 
-    public Long getId() {
+    public Boolean getIsAdmin() {
+        return isAdmin;
+    }
+
+    public @NotNull Long getId() {
         return id;
     }
 
@@ -50,9 +61,5 @@ public class UserShowDto {
 
     public String getUserEmailAdress() {
         return userEmailAdress;
-    }
-
-    public Boolean getAdmin() {
-        return isAdmin;
     }
 }
