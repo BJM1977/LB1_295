@@ -14,12 +14,12 @@ import org.mapstruct.MappingTarget;
         componentModel = "spring"
 )
 public abstract class UserMapper {
-/*    @Mapping(source = "id", target = "id")
+   /* @Mapping(source = "id", target = "id")
     @Mapping(source = "userName", target = "userName")
     @Mapping(source = "userPassword", target = "userPassword")
     @Mapping(source = "userEmailAdress", target = "userEmailAdress")
-    @Mapping(source = "isAdmin", target = "isAdmin")*/
-    @Mapping(source = "id", target = "id")
+    @Mapping(source = "isAdmin", target = "isAdmin")
+    @Mapping(source = "id", target = "id")*/
     public abstract UserShowDto toShowDto(User user);
 
     public abstract User toEntity(UserCreateDto userCreateDto);
