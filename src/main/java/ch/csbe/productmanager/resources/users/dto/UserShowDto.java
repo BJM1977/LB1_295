@@ -1,10 +1,12 @@
 package ch.csbe.productmanager.resources.users.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 @Data
+@Schema(description = "DTO für die Listenansicht aller User (UserShowWebseite)")
 @Getter
 @Setter
 public class UserShowDto {

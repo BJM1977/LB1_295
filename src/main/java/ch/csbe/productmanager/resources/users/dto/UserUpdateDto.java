@@ -1,5 +1,8 @@
 package ch.csbe.productmanager.resources.users.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
+@Schema(description = "DTO für das Bearbeiten von Usern (UserUpdateWebseite)")
 public class UserUpdateDto {
     private String userName;
     private String userPassword;

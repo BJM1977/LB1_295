@@ -1,5 +1,8 @@
 package ch.csbe.productmanager.resources.categories.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
+@Schema(description = "DTO für das Update von Kategorien (CategoryUpdateWebseite)")
 public class CategoryUpdateDto {
     public String active;
     public String name;

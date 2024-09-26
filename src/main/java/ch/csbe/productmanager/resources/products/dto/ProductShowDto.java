@@ -5,7 +5,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
 @Data
-@Schema(description = "DTO für die Listenansicht aller Produkte (ProduktsübersichtWebseite)")
+@Schema(description = "DTO für die Listenansicht aller Produkte (ProduktShowWebseite)")
 public class ProductShowDto {
     public Long id;
     public String sku;

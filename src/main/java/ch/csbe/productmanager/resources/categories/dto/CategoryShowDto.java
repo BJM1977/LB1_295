@@ -1,8 +1,12 @@
 package ch.csbe.productmanager.resources.categories.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
+
 import lombok.Data;
 
 @Data
+@Schema(description = "DTO für die Listenansicht aller Kategorien (CategoryShowWebseite)")
 public class CategoryShowDto {
     public Long id;
     public String active;

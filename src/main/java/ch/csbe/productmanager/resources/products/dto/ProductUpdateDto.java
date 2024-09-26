@@ -1,5 +1,8 @@
 package ch.csbe.productmanager.resources.products.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
+@Schema(description = "DTO für das Bearbeiten von Produkten (ProduktsUpdateWebseite)")
 public class ProductUpdateDto {
     public String sku;
     public String active;

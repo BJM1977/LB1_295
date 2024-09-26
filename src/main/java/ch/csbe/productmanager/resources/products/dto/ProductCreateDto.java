@@ -1,5 +1,8 @@
 package ch.csbe.productmanager.resources.products.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
+@Schema(description = "DTO für die Erstellung von Produkten (ProduktsCreateWebseite)")
 public class ProductCreateDto {
 
     public Long categoryId;

@@ -1,5 +1,8 @@
 package ch.csbe.productmanager.resources.users.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
+@Schema(description = "DTO für die detailierte Listenansicht von Usern (UserDetailWebseiteDetailiert)")
 public class UserDetailDto {
     private Long id;
     private String userName;

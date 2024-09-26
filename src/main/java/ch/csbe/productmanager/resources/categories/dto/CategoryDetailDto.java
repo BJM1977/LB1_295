@@ -1,5 +1,8 @@
 package ch.csbe.productmanager.resources.categories.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
+@Schema(description = "DTO für die detailierte Listenansicht von Kategorien (CategoryDetailWebseiteDetailiert)")
 public class CategoryDetailDto {
     public String id;
     public String active;

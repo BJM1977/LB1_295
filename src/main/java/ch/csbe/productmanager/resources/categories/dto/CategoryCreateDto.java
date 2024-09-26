@@ -1,5 +1,8 @@
 package ch.csbe.productmanager.resources.categories.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
+@Schema(description = "DTO für das Erstellen von Kategorien CategoryCreateWebseite)")
 public class CategoryCreateDto {
     public String active;
     public String name;

@@ -1,5 +1,8 @@
 package ch.csbe.productmanager.resources.products.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
+@Schema(description = "DTO für die detailierte Listenansicht aller Produkte (ProduktsübersichtWebseiteDetailiert)")
 public class ProductDetailDto {
     public String id;
     public String sku;
