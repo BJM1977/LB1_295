@@ -1,10 +1,16 @@
 package ch.csbe.productmanager.resources.users.dto;
 
+import ch.csbe.productmanager.resources.users.login.SecurityConfiguration;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotNull;
+import org.springframework.beans.factory.annotation.Autowired;
+
+
 
 @Schema(description = "DTO für die detailierte Listenansicht von Usern (UserDetailWebseiteDetailiert)")
 public class UserDetailDto {
+    @Autowired
+    SecurityConfiguration securityConfiguration;
     @NotNull
     @Schema(description = "Einzigartige Identifikationsnummer des Users")
     private Long id;

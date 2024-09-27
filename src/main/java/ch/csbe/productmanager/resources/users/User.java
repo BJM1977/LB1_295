@@ -1,14 +1,18 @@
 package ch.csbe.productmanager.resources.users;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+
+import javax.management.relation.Role;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
 @Setter
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
@@ -25,6 +29,12 @@ public class User {
 
     @Column(columnDefinition = "boolean")
     private Boolean isAdmin=false;
+
+    public List<String>getRoles(){
+        List<String> hardcodedRoles = new ArrayList<>();
+        hardcodedRoles.add("ROLE_ADMIN");
+        return hardcodedRoles;
+    }
 
     public void setId(Long id) {
         this.id = id;
@@ -65,4 +75,6 @@ public class User {
     public Boolean getIsAdmin() {
         return isAdmin;
     }
+
+
 }

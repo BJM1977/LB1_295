@@ -1,14 +1,13 @@
 package ch.csbe.productmanager.resources.users;
-import ch.csbe.productmanager.resources.products.Product;
-import ch.csbe.productmanager.resources.products.dto.*;
-import ch.csbe.productmanager.resources.users.User;
 import ch.csbe.productmanager.resources.users.dto.*;
+import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import javax.management.relation.Role;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.List;
 
 @Service
@@ -17,6 +16,30 @@ public class UserService {
     private UserRepository userRepository;
     @Autowired
     UserMapper userMapper;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
+
+    public User registerNewUserAccount(UserShowDto accountDto) throws BadRequestException {
+        if (emailExist(accountDto.getUserEmailAdress())) {
+            throw new BadRequestException(
+                    "There is an account with that email adress:" + accountDto.getUserEmailAdress());
+        }
+        User user = new User();
+        user.setUserName(accountDto.getUserName());
+
+
+        user.setUserPassword(passwordEncoder.encode(accountDto.getUserPassword()));
+
+        user.setUserEmailAdress(accountDto.getUserEmailAdress());
+
+        return userRepository.save(user);
+    }
+
+    private boolean emailExist(String userEmailAdress) {
+        return false;
+
+    }
 
 
     public UserDetailDto getById(long id) {
@@ -65,5 +88,17 @@ public class UserService {
 
     public void setUserMapper(UserMapper userMapper) {
         this.userMapper = userMapper;
+    }
+
+    public User getUserWithCredentials(LoginRequestDto loginRequestDto) {
+        return null;
+    }
+
+    public PasswordEncoder getPasswordEncoder() {
+        return passwordEncoder;
+    }
+
+    public void setPasswordEncoder(PasswordEncoder passwordEncoder) {
+        this.passwordEncoder = passwordEncoder;
     }
 }
