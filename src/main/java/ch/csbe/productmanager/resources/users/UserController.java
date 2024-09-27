@@ -26,7 +26,10 @@ public class UserController {
     @GetMapping
     public List<UserShowDto> getUsers() {
         return userService.findAll();
-
+    }
+    @GetMapping
+    public List<UserShowDto> getUserEmailAdress() {
+        return userService.findAll();
     }
 
     @PostMapping
