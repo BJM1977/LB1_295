@@ -27,10 +27,6 @@ public class UserController {
     public List<UserShowDto> getUsers() {
         return userService.findAll();
     }
-    @GetMapping
-    public List<UserShowDto> getUserEmailAdress() {
-        return userService.findAll();
-    }
 
     @PostMapping
     public UserDetailDto createUser(@RequestBody UserCreateDto userCreateDto) {
