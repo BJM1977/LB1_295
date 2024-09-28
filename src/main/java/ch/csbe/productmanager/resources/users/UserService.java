@@ -3,10 +3,10 @@ import ch.csbe.productmanager.resources.users.dto.*;
 import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import javax.management.relation.Role;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +20,7 @@ public class UserService {
     private PasswordEncoder passwordEncoder;
 
 
-    public User registerNewUserAccount(UserShowDto accountDto) throws BadRequestException {
+    public User registerNewUserAccount(UserCreateDto accountDto) throws BadRequestException {
         if (emailExist(accountDto.getUserEmailAdress())) {
             throw new BadRequestException(
                     "There is an account with that email adress:" + accountDto.getUserEmailAdress());
@@ -91,7 +91,20 @@ public class UserService {
     }
 
     public User getUserWithCredentials(LoginRequestDto loginRequestDto) {
-        return null;
+        // Extrahiere Benutzername und Passwort aus dem DTO
+        String usernameOrEmail = loginRequestDto.getUserName();
+        String password = loginRequestDto.getPassword();
+
+        // Finde den Benutzer in der Datenbank anhand des Benutzernamens oder der E-Mail-Adresse
+        User user = userRepository.findUserByEmail(usernameOrEmail);
+
+
+        // Überprüfe, ob das Passwort korrekt ist (beachten Sie, dass Passwörter gehasht gespeichert werden sollten)
+        if (passwordEncoder.matches(password, user.getUserPassword())) {
+            return user; // Rückgabe des Benutzers, wenn die Anmeldeinformationen korrekt sind
+        } else {
+            throw new BadCredentialsException("Invalid password"); // Fehlermeldung bei falschem Passwort
+        }
     }
 
     public PasswordEncoder getPasswordEncoder() {

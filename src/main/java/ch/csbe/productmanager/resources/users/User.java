@@ -2,6 +2,7 @@ package ch.csbe.productmanager.resources.users;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import javax.management.relation.Role;
 import java.util.ArrayList;
@@ -75,6 +76,5 @@ public class User {
     public Boolean getIsAdmin() {
         return isAdmin;
     }
-
 
 }

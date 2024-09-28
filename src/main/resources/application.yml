@@ -9,9 +9,12 @@ spring:
   jpa:
     generate-ddl: true
     hibernate:
-      ddl-auto: create-drop
-logging:
-  level:
+      ddl-auto: create
     org:
       springframework:
         security: DEBUG
+flyway:
+  url: jdbc:mariadb://localhost:3306/todos
+  schemas: todos
+  user: "root"
+  password: "Admin12345"

@@ -1,22 +1,22 @@
 package ch.csbe.productmanager.resources.users.dto;
 
 public class LoginRequestDto {
-    private String usernameOrEmail;
-    private String password;
+    private String userName;
+    private String userPassword;
 
-    public String getUsernameOrEmail() {
-        return usernameOrEmail;
+    public String getUserName() {
+        return userName;
     }
 
     public String getPassword() {
-        return password;
+        return userPassword;
     }
 
     public void setUsernameOrEmail(String usernameOrEmail) {
-        this.usernameOrEmail = usernameOrEmail;
+        this.userName = userName;
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.userPassword = password;
     }
 }
