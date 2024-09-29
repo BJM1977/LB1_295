@@ -14,7 +14,7 @@ spring:
       springframework:
         security: DEBUG
 flyway:
-  url: jdbc:mariadb://localhost:3306/todos
-  schemas: todos
+  url: jdbc:mariadb://localhost:3306/product-manager
+  schemas: product-manager
   user: "root"
   password: "Admin12345"
